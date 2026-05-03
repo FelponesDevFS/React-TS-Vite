@@ -1,0 +1,106 @@
+
+
+  import { useState } from 'react'
+import './App.css'
+
+
+
+function App() {
+  const [count, setCount] = useState<number>(0)
+
+
+  const addCount = () => {  
+    setCount(prev => prev + 1) 
+  }
+
+  const removeCount = () => {
+   
+    if (count > 0) {
+      setCount(prev => prev - 1)
+    }
+  }
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+
+      <button onClick={addCount}>+</button>
+
+      
+      {count > 0 && (
+        <button onClick={removeCount}> - </button>
+      )}
+    </div>
+  )
+}
+export default App
+
+import { useState } from 'react'
+import './App.css'
+
+
+
+function App() {
+  const [hide, setHide] = useState<boolean>(false);
+
+ const hideVisibility = () => {
+  setHide(!hide);
+};
+
+  return (
+
+  <div>
+
+  <h2>HideOn / HideOff</h2>
+
+ 
+    <button onClick={hideVisibility}>
+      {hide ? 'Esconder' : 'Mostrar'}
+    </button>
+
+    {hide && <p>Está visivel agora</p>}
+  </div>
+  )
+
+}
+export default App
+
+
+import { useState } from 'react'
+import './App.css'
+
+
+
+function App() {
+const [valorInput, setvalorInput] = useState("")
+
+const heandleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+  setvalorInput(event.target.value)
+
+}
+
+const heandleRemove = () => {
+  setvalorInput("")
+}
+
+
+  return (
+    <div>
+
+      <h2>Input em tempo real</h2>
+  
+      <input value={valorInput} onChange={heandleOnChange}    />
+
+      <button onClick={heandleRemove}>
+        Limpar
+      </button>
+      <p>Seu texto em tempo real: {valorInput} </p>
+
+    </div>
+
+  )
+
+}
+export default App
+
