@@ -1,158 +1,96 @@
-/* Formulario.module.css */
+
+
 .main {
-    min-height: 100vh; 
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; 
+    padding: 20px;
+    background: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.formCard {
+    max-width: 400px;
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .headerForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.headerForm h2,
+.headerForm h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 8px 0;
+}
+
 .headerForm p {
+    font-size: 14px;
+    color: #666;
     margin: 0;
 }
 
 .formContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px
-}
-
-.formCard {
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 40px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px;
-    background-color: rgb(255, 255, 255);
-    border: 1.5px solid rgba(182, 178, 178, 0.587);
-    border-radius: 16px;
-    padding: 40px;
+    gap: 20px;
 }
 
 .formGroup {
     display: flex;
     flex-direction: column;
-    position: relative;
-    margin-bottom: 28px; 
-    width: 100%;
 }
 
 .label {
-    font-size: 13px;
-    margin-bottom: 8px;
-    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
 }
 
-/* AS BORDAS CONTINUAM AQUI: Estilo padrão para todos os seus inputs */
 .formGroup input {
-    padding: 12px; 
-    background: rgba(243, 237, 237, 0.503);
-    border: 1.5px solid rgba(182, 178, 178, 0.587);
-    border-radius: 8px;
-    height: 64px;
-    width: 100%; /* Mudado para 100% para ocupar o espaço correto do formGroup */
-    box-sizing: border-box; 
-    transition: border-color 0.3s ease; 
-    outline: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .formGroup input:focus {
-    border-color: rgb(0, 85, 255);
+    outline: none;
+    border-color: #0055ff;
 }
 
-.formGroup input::placeholder {
-    color: #a0a0a0; 
-    font-weight: 500; /* CORRIGIDO: Removido o 'px' que quebrava a propriedade */
-    font-size: 14px;         
-    opacity: 1;              
-}
-
-.errorMessage {
-    position: absolute;
-    left: 0;
-    top: 100%; 
-    margin-top: 4px; 
-    color: #e74c3c; 
-    font-size: 11px;
-    line-height: 1.2;
-    pointer-events: none; 
-}
-
-/* O wrapper do campo de senha para controlar o botão flutuante */
-.inputWrapper {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-/* Dá um espaçamento no texto para ele não digitar "por baixo" do botão */
-.inputWrapper input {
-    padding-right: 50px; 
+.error {
+    font-size: 12px;
+    color: #d32f2f;
+    margin-top: 4px;
 }
 
 .submitContainer {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .submitButton {
     width: 100%;
-    height: 48px;
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(0, 85, 255);
+    padding: 12px;
+    background: #0055ff;
     color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .submitButton:hover {
-    background-color: rgb(0, 70, 210);
-}
-
-.submitButton:active {
-    transform: scale(0.98); 
-}
-
-.caracterCounter {
-    position: absolute;
-    top: 10px; 
-    left: 230px;
-    margin: 0;
-    color: #000000; /* Mudado para cinza para aparecer no fundo branco */
-    font-size: 11px;
-    line-height: 1.2;
-    pointer-events: none; 
-}
-
-/* O BOTÃO DE VER SENHA AGORA FLUTUA DENTRO DA BORDA DO INPUT */
-.showPassword {
-    position: absolute;
-    right: 15px; /* Distância da borda direita do input */
-    top: 50%;
-    transform: translateY(-50%); /* Centraliza verticalmente certinho */
-    white-space: nowrap;
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    color: #666;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-}
-
-.showPassword:hover {
-    color: rgb(0, 85, 255);
+    background: #0044dd;
 }
