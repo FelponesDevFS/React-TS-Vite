@@ -14,11 +14,16 @@ const Formulario = () => {
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ mode: "onChange" });
     const [listaUsuarios, setListaUsuarios] = useState<FormData[]>([]);
+    const [showPassword, setShowPassword] = useState(false)
 
     const handleSave = (data: FormData) => {
         setListaUsuarios((prev) => [...prev, data]);
         navigate("/perfil", { state: data });
     };
+
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword)
+    }
 
     return (
         <div className={styles.main}>
@@ -68,7 +73,7 @@ const Formulario = () => {
                     <div className={styles.formGroup}>
                         <label className={styles.label}>Senha</label>
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             placeholder="Digite sua senha"
                             minLength={8}
                             {...register("senha", {
@@ -76,6 +81,9 @@ const Formulario = () => {
                                 minLength: { value: 8, message: "Mínimo 8 caracteres" }
                             })}
                         />
+                        <button type="button" onClick={handleShowPassword}>
+                            Ver
+                        </button>
                         {errors.senha && <span className={styles.error}>{errors.senha.message}</span>}
                     </div>
 
